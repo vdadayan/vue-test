@@ -8,6 +8,7 @@
       <option value="completed">Completed</option>
       <option value="not-completed">Not Completed</option>
     </select>
+    <button @click="sortName">Toggle sort by name</button>
     <hr>
   </div>
   <Loader v-if="loading"/>
@@ -27,7 +28,8 @@ export default {
     return {
       todos: [],
       loading: true,
-      filter: 'all'
+      filter: 'all',
+      sort: true
     }
   },
   computed: {
@@ -49,7 +51,17 @@ export default {
     },
     addTodo(todo) {
       this.todos.push(todo)
-    }
+    },
+    sortName() {
+      this.sort ? this.todos.sort(this.byFieldUp('title')) : this.todos.sort(this.byFieldDown('title'))
+      this.sort = !this.sort
+    },
+    byFieldUp(field) {
+      return (a, b) => a[field] > b[field] ? 1 : -1;
+    },
+    byFieldDown(field) {
+      return (a, b) => a[field] < b[field] ? 1 : -1;
+    },
   },
   components: {
     Todolist,
