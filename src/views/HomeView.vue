@@ -6,6 +6,7 @@
       <router-link to="/todos">Todos</router-link>
       <router-link to="/chain">Цепочка запросов</router-link>
       <router-link to="/validation">Валидация</router-link>
+      <router-link to="/access">Права доступа</router-link>
     </div>
   </div>
 </template>

@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>Тестовое задание</h1>
-    <router-view />
+      <router-view />
   </div>
 </template>
 <script>
@@ -19,5 +19,6 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  height: 100vh;
 }
 </style>
