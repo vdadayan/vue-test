@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Todo application</h1>
+    <h1>Тестовое задание</h1>
     <router-view />
   </div>
 </template>

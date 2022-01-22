@@ -5,7 +5,11 @@
 <style scoped>
 .lds-circle {
   display: inline-block;
-  transform: translateZ(1px);
+  /*transform: translateZ(1px);*/
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .lds-circle > div {
   display: inline-block;

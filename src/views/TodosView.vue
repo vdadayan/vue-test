@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2>Todo Application</h2>
-    <router-link to="/">back</router-link>
+    <router-link to="/">Главная</router-link>
     <AddTodo @add-todo="addTodo"/>
     <select v-model="filter">
       <option value="all">All</option>
@@ -16,11 +16,10 @@
 </template>
 
 
-
 <script>
-import Todolist from '@/components/TodoList'
-import AddTodo from '@/components/AddTodo'
-import Loader from '@/components/Loader'
+import Todolist from '../components/Todo/TodoList'
+import AddTodo from '../components/Todo/AddTodo'
+import Loader from '../components/Loader'
 
 export default {
   name: 'App',
@@ -31,11 +30,6 @@ export default {
       filter: 'all'
     }
   },
-  // watch: {
-  //   filter(value) {
-  //     console.log(value)
-  //   }
-  // }
   computed: {
     filteredTodos() {
       if (this.filter === 'all') {
@@ -44,7 +38,7 @@ export default {
       if (this.filter === 'completed') {
         return this.todos.filter(item => item.completed)
       }
-      if (this.filter === 'not- completed') {
+      if (this.filter === 'not-completed') {
         return this.todos.filter(item => !item.completed)
       }
     }
