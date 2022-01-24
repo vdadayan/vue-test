@@ -3,7 +3,7 @@
   <router-link to="/">Главная</router-link>
   <div class="access-wrapper">
     <div class="link-group">
-      <router-link active-class="active"  to="/access/home">Home</router-link>
+      <router-link active-class="active" to="/access/home">Home</router-link>
       <router-link active-class="active" v-if="permissions !== 'Admin'" to="/access/reports">Reports</router-link>
       <router-link active-class="active" v-if="permissions !== 'User'" to="/access/settings">Settings</router-link>
     </div>
@@ -42,6 +42,7 @@ export default {
   justify-content: center;
   flex-grow: 1;
 }
+
 .active {
   color: orange;
 }
